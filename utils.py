@@ -14,7 +14,7 @@ def get_article(URL):
 
 def get_URL(month, year):
     URL = "https://www.gismeteo.ru/diary/4618/" + \
-        str(year) + "/" + str(month) + "/"
+          str(year) + "/" + str(month) + "/"
     return URL
 
 
@@ -61,17 +61,18 @@ def get_time():
     print("Time sleep:", scaled_valie)
     time.sleep(scaled_valie)
 
+
 def run():
     file = open("C:/PYTHON/dataset.csv", "w", encoding="utf-8")
     months = ["", "January", "February", "March", "April", "May", "June",
-                "July", "August", "September", "October", "November", "December"]
+              "July", "August", "September", "October", "November", "December"]
     year = 2022
     month = 9
     while year != 2007:
         while month != 0:
             article = get_article(get_URL(month, year))
             write_month(months, month, year)
-            for i in range(2, len(article)-1):
+            for i in range(2, len(article) - 1):
                 write_day(get_data(article[i]) + get_data_evening(article[i]))
             print("Parsing of", months[month], year)
             get_time()
