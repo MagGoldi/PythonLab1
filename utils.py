@@ -51,6 +51,8 @@ def write_month(months, month, year):
 
 
 def make_dir():
+    if not os.path.isdir("PYTHON.csv"):
+        os.mkdir("PYTHON.csv")
     if not os.path.isdir("dataset.csv"):
         os.mkdir("dataset.csv")
 
