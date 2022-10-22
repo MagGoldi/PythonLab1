@@ -25,7 +25,7 @@ def get_data(article, year, mounth):
     wind = article.find("span").text
     pressure = list(article.find_all("td"))
     pressure = str(pressure[2].text)
-    data = str(datetime.date(int(year), int(mounth), int(date))) +"; " + "Day:" + temp + ", " + wind + ", " + pressure
+    data = str(datetime.date(int(year), int(mounth), int(date))) +", " + "Day:" + temp + ", " + wind + ", " + pressure + ", "
     return data
 
 
